@@ -73,10 +73,10 @@ local def = {
     idle = {chance = 0.25, duration = 5, update_yaw = 3},
     idle2 = {chance = 0.69, duration = 0.8},
     pick = {chance = 0.2, duration = 2},
-    walk = {chance = 0.2, duration = 5.5, moving_speed = 0.7, update_yaw = 2},
-    panic = {moving_speed = 2.1},
+    walk = {chance = 0.2, duration = 5.5, moving_speed = -0.7, update_yaw = 2},
+    panic = {moving_speed = -2.1},
     lay_egg = {chance = 0.01, duration = 1},
-    follow = {chance = 0, duration = 10, radius = 8, timer = 1, moving_speed = 1, items = {"farming:seed_wheat"}},
+    follow = {chance = 0, duration = 10, radius = 8, timer = 1, moving_speed = -1, items = {"farming:seed_wheat"}},
   },
 
   model = {

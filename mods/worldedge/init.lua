@@ -2,7 +2,7 @@
 -- TODO: Check for terrain height
 
 -- Defines the edge of a world
-local edge = 2000
+local edge = 1500
 -- Radius which should be checked for a good teleportation place
 local radius = 3
 --------------
