@@ -1,0 +1,3 @@
+[submodule "mods/mods/discordmt"]
+	path = mods/mods/discordmt
+	url = https://github.com/archfan7411/discordmt.git
