@@ -264,7 +264,7 @@ local function register_basehorse(name, craftitem, horse)
 			clicker:set_eye_offset({x=0, y=0, z=0}, {x=0, y=0, z=0})
         elseif not self.driver then
             self.driver = clicker
-            clicker:set_attach(self.object, "", {x=0,y=18,z=0}, {x=0,y=90,z=0})
+            clicker:set_attach(self.object, "", {x=0,y=9,z=0}, {x=0,y=90,z=0})
 			clicker:set_eye_offset({x=0, y=8, z=0}, {x=0, y=0, z=0})
             --self.object:setyaw(clicker:get_look_yaw())
         end

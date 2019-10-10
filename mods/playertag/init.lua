@@ -18,7 +18,7 @@ local function add_tag(player)
 	ent:set_properties({ textures={texture} })
 
 	if ent ~= nil then
-		 ent:set_attach(player, "", {x=0,y=18,z=0}, {x=0,y=0,z=0})
+		 ent:set_attach(player, "", {x=0,y=2,z=0}, {x=0,y=0,z=0})
 		 nametags[player:get_player_name()] = ent
 		 ent = ent:get_luaentity()
 		 ent.wielder = player
