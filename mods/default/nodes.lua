@@ -633,6 +633,8 @@ minetest.register_node("default:leaves", {
 	special_tiles = {"default_leaves_simple.png"},
 	paramtype = "light",
 	is_ground_content = false,
+	walkable = false,
+	climbable = true,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
 	drop = {
 		max_items = 1,
@@ -710,6 +712,8 @@ minetest.register_node("default:jungleleaves", {
 	special_tiles = {"default_jungleleaves_simple.png"},
 	paramtype = "light",
 	is_ground_content = false,
+	walkable = false,
+	climbable = true,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
 	drop = {
 		max_items = 1,
@@ -789,6 +793,8 @@ minetest.register_node("default:pine_needles",{
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
+	walkable = false,
+	climbable = true,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
 	drop = {
 		max_items = 1,
@@ -869,6 +875,8 @@ minetest.register_node("default:acacia_leaves", {
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
+	walkable = false,
+	climbable = true,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
 	drop = {
 		max_items = 1,
@@ -947,6 +955,8 @@ minetest.register_node("default:aspen_leaves", {
 	waving = 1,
 	paramtype = "light",
 	is_ground_content = false,
+	walkable = false,
+	clmbable = true,
 	groups = {snappy = 3, leafdecay = 3, flammable = 2, leaves = 1},
 	drop = {
 		max_items = 1,
