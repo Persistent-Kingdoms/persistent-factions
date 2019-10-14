@@ -1,0 +1,10 @@
+[Settings]
+
+# The stone node name to override.
+lava_ore_gen.stone_name (Stone) string default:stone
+# fixed interval of when to change stone to ore.
+lava_ore_gen.interval (Interval) int 20
+# random chance of when to change stone to ore.
+lava_ore_gen.chance (Chance) int 3600
+# Make ores random instead of being based on how rare they are.
+lava_ore_gen.random (Random) bool false
