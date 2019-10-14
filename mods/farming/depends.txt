@@ -1,5 +1,2 @@
 default
-stairs?
-intllib?
-lucky_block?
-toolranks?
+wool
