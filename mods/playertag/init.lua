@@ -74,7 +74,7 @@ local function step()
 			add_tag(player)
 			--minetest.chat_send_all("tag made for "..player:get_player_name())
 		else
-			nametags[player:get_player_name()]:set_attach(player, "", {x=0,y=14,z=0}, {x=0,y=0,z=0})
+			nametags[player:get_player_name()]:set_attach(player, "", {x=0,y=19,z=0}, {x=0,y=0,z=0})
 		end
 	end
 
