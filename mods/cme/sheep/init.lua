@@ -132,7 +132,7 @@ local def = {
 		number = {min = 1, max = 3},
 		time_range = {min = 5100, max = 18300},
 		light = {min = 10, max = 15},
-		height_limit = {min = 0, max = 25},
+		height_limit = {min = 0, max = 250},
 
 		spawn_egg = {
 			description = "Sheep Spawn-Egg",
