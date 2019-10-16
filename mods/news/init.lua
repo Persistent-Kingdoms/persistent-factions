@@ -20,7 +20,7 @@ chat_reasons.fall = {
 chat_reasons.drown = {
     "fell asleep in the tub",
     "blew one to many bubbles",
-    "Tried to drink the ocean",
+    "tried to drink the ocean",
 }
 
 minetest.register_on_dieplayer(function(obj, reason)
