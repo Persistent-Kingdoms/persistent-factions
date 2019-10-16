@@ -393,7 +393,7 @@ minetest.register_abm({
 		"group:dry_grass",
 		"default:snow",
 	},
-	interval = 6,
+	interval = 2,
 	chance = 50,
 	catch_up = false,
 	action = function(pos, node)
