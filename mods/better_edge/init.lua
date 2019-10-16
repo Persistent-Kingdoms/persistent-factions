@@ -49,6 +49,7 @@ minetest.register_globalstep(function(dtime)
 				end
 				local pos = player:get_pos()
 				if not is_pos_valid(pos) then
+					minetest.chat_send_player(player:get_player_name(), "Thou fool, to explore beyond the four corners of the world...")
 					if is_pos_valid(players[player:get_player_name()]) then
 						player:set_pos(players[player:get_player_name()])			
 					else
