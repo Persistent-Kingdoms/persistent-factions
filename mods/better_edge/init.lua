@@ -21,7 +21,6 @@ local function is_pos_valid(pos)
                         	valid = false
 			end
         	end
-	end
 	return valid
 end
 
@@ -44,10 +43,9 @@ minetest.register_globalstep(function(dtime)
 	if dtime then
 		timer = timer + dtime
 		if timer >= 5 then
-			for _, player in pairs(minetest.get_connected_players) do
+			for _, player in pairs(minetest.get_connected_players()) do
 				if not players[player:get_player_name()] then
-					players[player:get_player_name] = player:get_pos()
-					break
+					players[player:get_player_name()] = player:get_pos()
 				end
 				local pos = player:get_pos()
 				if not is_pos_valid(pos) then
