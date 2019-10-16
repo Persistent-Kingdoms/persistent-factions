@@ -29,9 +29,9 @@ minetest.register_on_dieplayer(function(obj, reason)
         local news = ""
         if reason.object then
             killer = reason.object:get_player_name()
-            news = " BREAKING NEWS: Player \"" .. obj:get_player_name() .. "\" " .. chat_reasons[reason.type][math.random(1, #chat_reasons[reason.type])] .. "\"" .. killer .. "\"."
+            news = " BREAKING NEWS: Local man \"" .. obj:get_player_name() .. "\" " .. chat_reasons[reason.type][math.random(1, #chat_reasons[reason.type])] .. "\"" .. killer .. "\"."
         else
-            news = " BREAKING NEWS: Player \"" .. obj:get_player_name() .. "\" " .. chat_reasons[reason.type][math.random(1, #chat_reasons[reason.type])] .. "."
+            news = " BREAKING NEWS: Local man \"" .. obj:get_player_name() .. "\" " .. chat_reasons[reason.type][math.random(1, #chat_reasons[reason.type])] .. "."
         end
         print(news)
 
