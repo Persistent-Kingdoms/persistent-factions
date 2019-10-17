@@ -1225,6 +1225,9 @@ factions.register_command("seen", {
 --! @param parameter data supplied to command
 -------------------------------------------------------------------------------
 factions_chat.cmdhandler = function (playername,parameter)
+	if not minetest.get_player_by_name(playername) then
+		return false, "You cannot run faction commands unless you are online!"
+	end
 
 	local player = minetest.env:get_player_by_name(playername)
 	local params = parameter:split(" ")
