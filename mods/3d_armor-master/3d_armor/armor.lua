@@ -182,37 +182,6 @@ if armor.materials.bronze then
 	})
 end
 
-if armor.materials.diamond then
-	armor:register_armor("3d_armor:helmet_diamond", {
-		description = S("Diamond Helmet"),
-		inventory_image = "3d_armor_inv_helmet_diamond.png",
-		groups = {armor_head=1, armor_heal=12, armor_use=200},
-		armor_groups = {fleshy=15},
-		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
-	})
-	armor:register_armor("3d_armor:chestplate_diamond", {
-		description = S("Diamond Chestplate"),
-		inventory_image = "3d_armor_inv_chestplate_diamond.png",
-		groups = {armor_torso=1, armor_heal=12, armor_use=200},
-		armor_groups = {fleshy=20},
-		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
-	})
-	armor:register_armor("3d_armor:leggings_diamond", {
-		description = S("Diamond Leggings"),
-		inventory_image = "3d_armor_inv_leggings_diamond.png",
-		groups = {armor_legs=1, armor_heal=12, armor_use=200},
-		armor_groups = {fleshy=20},
-		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
-	})
-	armor:register_armor("3d_armor:boots_diamond", {
-		description = S("Diamond Boots"),
-		inventory_image = "3d_armor_inv_boots_diamond.png",
-		groups = {armor_feet=1, armor_heal=12, armor_use=200},
-		armor_groups = {fleshy=15},
-		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
-	})
-end
-
 if armor.materials.gold then
 	armor:register_armor("3d_armor:helmet_gold", {
 		description = S("Gold Helmet"),

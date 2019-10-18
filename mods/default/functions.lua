@@ -465,11 +465,11 @@ minetest.register_abm({
 		if node.name == "default:cobble" then
 			minetest.set_node(pos, {name = "default:mossycobble"})
 		elseif node.name == "stairs:slab_cobble" then
-			minetest.set_node(pos, {name = "stairs:slab_mossycobble", param2 = node.param2})
+			minetest.set_node(pos, {name = "default:mossycobble", param2 = node.param2})
 		elseif node.name == "stairs:stair_cobble" then
 			minetest.set_node(pos, {name = "stairs:stair_cobble", param2 = node.param2})
 		elseif node.name == "walls:cobble" then
-			minetest.set_node(pos, {name = "walls:mossycobble", param2 = node.param2})
+			minetest.set_node(pos, {name = "default:cobble", param2 = node.param2})
 		end
 	end
 })

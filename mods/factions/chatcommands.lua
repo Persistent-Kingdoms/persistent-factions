@@ -586,7 +586,11 @@ factions.register_command("declare_war", {
 				factions.factions[args.strings[1]]:end_neutral(faction.name)
 			end
 			faction:new_enemy(args.strings[1])
-			factions.factions[args.strings[1]]:new_enemy(faction.name)
+			local enemy = factions.factions[args.strings[1]]
+			if not enemy then
+				return false, "Failed!"
+			end
+			enemy:new_enemy(faction.name)
 			factions.save()
 		else
 			send_error(player, "You are already at war.")
