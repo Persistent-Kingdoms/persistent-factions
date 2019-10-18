@@ -1,9 +1,16 @@
+local items = {
+	"farming:seed_wheat 5",
+	"default:pick_stone",
+	"default:apple 20",
+	"default:sapling 3",
+	"craftguide:book",
+	"boats:boat",
+	"default:papyrus 8",
+}
+
 minetest.register_on_newplayer(function(player)
 	local inv = player:get_inventory()
-	inv:add_item("main", "farming:seed_wheat 5")
-	inv:add_item("main", "default:pick_stone")
-	inv:add_item("main", "default:apple 20")
-	inv:add_item("main", "default:sapling 3")
-	inv:add_item("main", "craftguide:book")
-	inv:add_item("main", "boats:boat")
+	for _, item in ipairs(items) do
+		inv:add_item("main", item)
+	end
 end)
