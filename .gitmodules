@@ -1,3 +1,9 @@
-[submodule "mods/mods/discordmt"]
-	path = mods/mods/discordmt
+[submodule "mods/advmarkers"]
+	path = mods/advmarkers
+	url = https://git.minetest.land/luk3yx/advmarkers.git
+[submodule "mods/discordmt"]
+	path = mods/discordmt
 	url = https://github.com/archfan7411/discordmt.git
+[submodule "mods/sscsm"]
+	path = mods/sscsm
+	url = https://git.minetest.land/luk3yx/sscsm.git
