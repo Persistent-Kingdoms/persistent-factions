@@ -25,6 +25,10 @@ local function siege_banner_onplace_check(player, pointed_thing, attacking_playe
         return false
     end
 
+    if pointedpos.y >= config.siege_max_height then
+        minetest.chat_send_player(player:get_player_name(), "You can't place a Siege Banner that high")
+    end
+
     if defending_faction == nil then
         minetest.chat_send_player(player:get_player_name(), "This parcel doesn't belong to a faction")
         return false

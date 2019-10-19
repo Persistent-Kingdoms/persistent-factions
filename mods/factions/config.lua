@@ -14,6 +14,7 @@
 
 config = {}
 config.protection_max_depth = tonumber(minetest.setting_get("protection_max_depth")) or -20
+config.siege_max_height = tonumber(minetest.setting_get("siege_max_height")) or 160
 config.power_per_parcel = tonumber(minetest.setting_get("power_per_parcel")) or 1
 config.power_per_death = tonumber(minetest.setting_get("power_per_death")) or 0.25
 config.power_per_tick = tonumber(minetest.setting_get("power_per_tick")) or 0.125
