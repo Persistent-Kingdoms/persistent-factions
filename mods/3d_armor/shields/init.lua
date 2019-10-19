@@ -146,23 +146,6 @@ if armor.materials.bronze then
 	})
 end
 
-if armor.materials.diamond then
-	armor:register_armor("shields:shield_diamond", {
-		description = S("Diamond Shield"),
-		inventory_image = "shields_inv_shield_diamond.png",
-		groups = {armor_shield=1, armor_heal=12, armor_use=200},
-		armor_groups = {fleshy=15},
-		damage_groups = {cracky=2, snappy=1, choppy=1, level=3},
-		reciprocate_damage = true,
-		on_damage = function(player, index, stack)
-			play_sound_effect(player, "default_glass_footstep")
-		end,
-		on_destroy = function(player, index, stack)
-			play_sound_effect(player, "default_break_glass")
-		end,
-	})
-end
-
 if armor.materials.gold then
 	armor:register_armor("shields:shield_gold", {
 		description = S("Gold Shield"),
