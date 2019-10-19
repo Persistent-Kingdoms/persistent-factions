@@ -7,3 +7,6 @@
 [submodule "mods/sscsm"]
 	path = mods/sscsm
 	url = https://git.minetest.land/luk3yx/sscsm.git
+[submodule "mods/mods/sscsm"]
+	path = mods/mods/sscsm
+	url = https://git.minetest.land/luk3yx/sscsm.git
