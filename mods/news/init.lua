@@ -68,9 +68,9 @@ minetest.register_on_dieplayer(function(obj, reason)
                 killer = reason.object:get_luaentity().name
             end
 
-            news_msg = " BREAKING NEWS: Local man \"" .. player .. "\" " .. reason_msg .. " \"" .. killer .. "\"."
+            news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. " \"" .. killer .. "\"."
         else
-            news_msg = " BREAKING NEWS: Local man \"" .. player .. "\" " .. reason_msg .. "."
+            news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. "."
         end
 
         local station = "[BBC News]"
