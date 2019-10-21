@@ -119,11 +119,12 @@ function boat.on_punch(self, puncher)
 		return
 	end
 
-	local name = puncher:get_player_name()
-	if self.driver and name == self.driver then
+	if self.driver then
+		minetest.get_player_by_name(self.driver):set_detach()
+		if player_api.player_attached[self.driver] then
+			player_api.player_attached[self.driver] = false
+		end
 		self.driver = nil
-		puncher:set_detach()
-		player_api.player_attached[name] = false
 	end
 	if not self.driver then
 		self.removed = true

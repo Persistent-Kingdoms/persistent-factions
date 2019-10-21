@@ -74,7 +74,7 @@ core.register_craftitem(":creatures:egg", {
 core.register_craftitem(":creatures:fried_egg", {
 	description = "Fried Egg",
 	inventory_image = "creatures_fried_egg.png",
-	on_use = core.item_eat(2)
+	on_use = hud.item_eat(5)
 })
 
 core.register_craft({

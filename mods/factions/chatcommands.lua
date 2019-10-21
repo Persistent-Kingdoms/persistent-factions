@@ -528,6 +528,11 @@ factions.register_command("accept", {
 				send_error(player, "You can not accept an request from own faction.")
 				return false
 			end
+			if not factions.factions[args.strings[1]] then
+                        	faction.request_inbox[args.strings[1]] = nil
+                        	factions.save()
+				return false, "This faction no longer exists!"
+			end
 			if faction.request_inbox[args.strings[1]] == "alliance" then
 				faction:new_alliance(args.strings[1])
 				factions.factions[args.strings[1]]:new_alliance(faction.name)
@@ -556,6 +561,11 @@ factions.register_command("refuse", {
 				send_error(player, "You can not refuse an request from your own faction.")
 				return false
 			end
+                        if not factions.factions[args.strings[1]] then
+                                faction.request_inbox[args.strings[1]] = nil
+                                factions.save()
+                                return false, "This faction no longer exists!"
+                        end
 			faction.request_inbox[args.strings[1]] = nil
 			factions.factions[args.strings[1]]:broadcast("Faction " .. faction.name .. " refuse to be your ally.")
 			faction:broadcast("Refused an request from faction " .. args.strings[1])

@@ -34,13 +34,13 @@ end
 core.register_craftitem(":creatures:chicken_flesh", {
 	description = "Raw Chicken Flesh",
 	inventory_image = "creatures_chicken_flesh.png",
-	on_use = core.item_eat(1)
+	on_use = hud.item_eat(1)
 })
 
 core.register_craftitem(":creatures:chicken_meat", {
 	description = "Chicken Meat",
 	inventory_image = "creatures_chicken_meat.png",
-	on_use = core.item_eat(3)
+	on_use = hud.item_eat(3)
 })
 
 core.register_craft({
