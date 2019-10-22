@@ -24,6 +24,8 @@ news.chat_reasons.drown = {
     "tried to drink the ocean",
 }
 
+minetest.register_privilege("news_report", {give_to_admin = true})
+
 function news.register_deathmsg_tbl(type, name, msgs)
     if not (type or name or msgs) then
         return
@@ -87,7 +89,7 @@ end)
 
 minetest.register_chatcommand("news", {
     privs = {
-        ban = true
+        news_report = true
     },
     func = function(station, param)
         local station, news_msg = string.match(param, "^([%d%a_-]+) ([%d%a%s%p%%_-]+)$")
@@ -99,7 +101,7 @@ minetest.register_chatcommand("news", {
             station = minetest.colorize("#a8659c", "[" .. string.upper(station) .. " News" .. "]")
             
             if bool and bool == "$" then
-                news_msg = "BREAKING NEWS: " .. string.sub(news, 1, #news_msg - 1)
+                news_msg = "BREAKING NEWS: " .. string.sub(news_msg, 1, #news_msg - 1)
             end
         
             news_msg = minetest.colorize("#7f99b1", news_msg)
@@ -110,7 +112,7 @@ minetest.register_chatcommand("news", {
             station = minetest.colorize("#a8659c", station)
 
             local news_msg = "BREAKING NEWS: Salt levels rising."
-            news_msg = minetest.colorize("#7f99b1", news)
+            news_msg = minetest.colorize("#7f99b1", news_msg)
 
             minetest.chat_send_all(station .. news_msg)
         end
