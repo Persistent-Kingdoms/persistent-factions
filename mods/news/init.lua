@@ -4,7 +4,9 @@ news.chat_reasons = {}
 news.chat_reasons.nodes = {}
 news.chat_reasons.groups = {}
 news.chat_reasons.set_hp = {
-    "mysteriously vanishes"
+    "mysteriously vanishes",
+    "gave up on life",
+    "evaporated into nothingness",
 }
 news.chat_reasons.punch = {
     "was sliced' and diced' by",
