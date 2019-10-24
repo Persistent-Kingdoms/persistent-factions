@@ -1,2 +1,1 @@
-This mod prevents players from digging through protected areas with high latency. If a players jitter(latency) goes beyond the limit his/her actions 
-will be canceled and the player will be sent back to the position before the jitter rate want up.
+This mod prevents players from digging through protected areas, By teleporting them back to the last recorded position. Also checks for the player's avg_jitter before recording the position.

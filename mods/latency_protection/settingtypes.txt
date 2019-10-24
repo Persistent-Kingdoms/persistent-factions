@@ -2,3 +2,6 @@
 
 # The timer for when to record a player position.
 latency_protection.timer (Position record) int 20
+
+# The max jitter a player can have before refusing the position update.
+latency_protection.jitter_max (Max jitter) float 1.5
