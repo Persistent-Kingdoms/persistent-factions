@@ -1,0 +1,4 @@
+[Latency Protection]
+
+# The timer for when to record a player position.
+latency_protection.timer (Position record) int 20
