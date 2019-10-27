@@ -97,7 +97,7 @@ minetest.register_craftitem("factions:siege_banner", {
 
         local meta = minetest.get_meta(pointed_thing.above)
 
-		meta:set_int("stage",1)
+		meta:set_int("stage", 1)
         meta:set_string("attacking_faction", attacking_faction.name)
         meta:set_string("defending_faction", defending_faction.name)
             
