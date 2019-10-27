@@ -37,16 +37,16 @@ function news.register_deathmsg_tbl(type, name, msgs)
 end
 
 minetest.register_on_dieplayer(function(obj, reason)
-    if reason.type and news.chat_reasons[reason.type] then
+    if reason.type then
         local killer = ""
         local news_msg = ""
         local reason_msg = ""
         local player = obj:get_player_name()
-        local node = minetest.registered_nodes[minetest.get_node(obj:get_pos()).name]
+        local node = minetest.registered_nodes[reason.node] or nil
         local num = nil
         print(node.name)
 
-        if reason.type == "node_damage" then
+        if reason.type == "node_damage" and node then
             --print("is node_damage")
             if node and news.chat_reasons.nodes[node.name] and #news.chat_reasons.nodes[node.name] > 0 then
                 num = math.random(1, #news.chat_reasons.nodes[node.name])
