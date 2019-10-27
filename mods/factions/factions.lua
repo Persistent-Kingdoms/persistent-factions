@@ -340,7 +340,7 @@ end
 function factions.Faction.can_claim_parcel(self, parcelpos)
     local fac = factions.parcels[parcelpos]
     if fac then
-        if factions.factions[fac].power < 0. and self.power >= factions.power_per_parcel and self.enemies[fac.name] then
+        if factions.factions[fac].power <= 0 and self.power >= factions.power_per_parcel then
             return true
         else
             return false
