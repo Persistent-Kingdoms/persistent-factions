@@ -44,10 +44,8 @@ minetest.register_on_dieplayer(function(obj, reason)
         local player = obj:get_player_name()
         local node = minetest.registered_nodes[reason.node] or nil
         local num = nil
-        print(node.name)
 
         if reason.type == "node_damage" and node then
-            --print("is node_damage")
             if node and news.chat_reasons.nodes[node.name] and #news.chat_reasons.nodes[node.name] > 0 then
                 num = math.random(1, #news.chat_reasons.nodes[node.name])
                 reason_msg = news.chat_reasons.nodes[node.name][num]
@@ -96,7 +94,6 @@ minetest.register_chatcommand("news", {
         local bool = string.sub(param, -1, -1)
 
         if station and news_msg then
-            --print(station, news, bool)
                 
             station = minetest.colorize("#a8659c", "[" .. string.upper(station) .. " News" .. "]")
             
