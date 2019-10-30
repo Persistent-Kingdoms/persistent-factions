@@ -119,7 +119,7 @@ minetest.register_node("factions:siege_banner_sieging", {
 	paramtype2 = "facedir",
 	drop = "",
 	on_construct = function(pos)
-		minetest.get_node_timer(pos):start(config.siege_banner_interval)
+		minetest.get_node_timer(pos):start(150)
 	end,
 	on_timer = function(pos, elapsed)
 		local meta = minetest.get_meta(pos)
