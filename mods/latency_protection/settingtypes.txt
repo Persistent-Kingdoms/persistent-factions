@@ -1,7 +1,22 @@
 [Latency Protection]
 
 # The timer for when to record a player position.
+# This only works if punishment is set to teleport.
 latency_protection.timer (Position record) int 20
 
 # The max jitter a player can have before refusing the position update.
+# This only works if punishment is set to teleport.
 latency_protection.jitter_max (Max jitter) float 1.5
+
+# The time limit between is_protected calls. If the function is called too fast the player will be teleport or damaged.
+# time_max is read in microseconds.
+latency_protection.time_max (Time Max) int 2000
+
+# Damage amount to apply to the player.
+# This only works if punishment is set to damage.
+latency_protection.damage (Damage) float 3
+
+# Set what type of punishment to be given to a player.
+# Teleport the player.
+# Damage the player.
+latency_protection.punishment (Punishment) enum damage teleport,damage
