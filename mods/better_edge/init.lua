@@ -15,18 +15,12 @@ end)
 local timer = 0
 
 local function is_pos_valid(pos)
-	local valid = true
-                for _,val in pairs(pos) do
-                	if val > limit or val < -limit then
-                        	valid = false
-			end
-        	end
-	return valid
+	return pos.x < limit and pos.x > -limit and pos.z < limit and pos.z > -limit
 end
 
 local function get_valid_pos(pos)
 	newpos = {}
-	for i,val in pairs(pos) do
+	for i,val in pairs({x=pos.x, z=pos.z}) do
 		if val > limit then
 			newpos[i] = limit-1
 		else
@@ -36,6 +30,7 @@ local function get_valid_pos(pos)
 			newpos[i] = -limit+1
 		end
 	end
+	newpos.y = pos.y
 	return newpos
 end
 
