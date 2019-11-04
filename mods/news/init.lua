@@ -26,13 +26,15 @@ news.chat_reasons.drown = {
 
 minetest.register_privilege("news_report", {give_to_admin = true})
 
-function news.register_deathmsg_tbl(type, name, msgs)
+function news.register_deathmsg_tbl(type, msgs, ...)
     if not (type or name or msgs) then
         return
     end
 
-    if news.chat_reasons[type] then
-        news.chat_reasons[type][name] = msgs
+    for _, tbl in pairs(arg) do
+        if news.chat_reasons[type] then
+            news.chat_reasons[type][tbl] = msgs
+        end
     end
 end
 
@@ -123,5 +125,4 @@ local lava_death_msgs = {
     "couldn't resist the warm glow of lava",
     "dug straight down",
 }
-news.register_deathmsg_tbl("nodes", "default:lava_source", lava_death_msgs)
-news.register_deathmsg_tbl("nodes", "default:lava_flowing", lava_death_msgs)
+news.register_deathmsg_tbl("nodes", lava_death_msgs, "default:lava_source", "default:lava_flowing")
