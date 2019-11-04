@@ -75,12 +75,14 @@ minetest.register_on_dieplayer(function(obj, reason)
             news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. "."
         end
 
-        local station = "[BBC News]"
-        station = minetest.colorize("#a8659c", station)
+        if reason_msg ~= "" then
+            local station = "[BBC News]"
+            station = minetest.colorize("#a8659c", station)
 
-        news_msg = minetest.colorize("#7f99b1", news_msg)
+            news_msg = minetest.colorize("#7f99b1", news_msg)
 
-        minetest.chat_send_all(station .. news_msg)
+            minetest.chat_send_all(station .. news_msg)
+        end
     end
 end)
 
@@ -116,9 +118,10 @@ minetest.register_chatcommand("news", {
     end
 })
 
-news.register_deathmsg_tbl("nodes", "default:lava_source", 
-{
+local lava_death_msgs = {
     "melted into a ball of fire",
     "couldn't resist the warm glow of lava",
-    "dug straight down"
-})
+    "dug straight down",
+}
+news.register_deathmsg_tbl("nodes", "default:lava_source", lava_death_msgs)
+news.register_deathmsg_tbl("nodes", "default:lava_flowing", lava_death_msgs)
