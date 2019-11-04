@@ -31,8 +31,8 @@ function news.register_deathmsg_tbl(type, msgs, ...)
         return
     end
 
-    for _, tbl in pairs(arg) do
-        if news.chat_reasons[type] then
+    if news.chat_reasons[type] then
+        for _, tbl in pairs(arg) do
             news.chat_reasons[type][tbl] = msgs
         end
     end
