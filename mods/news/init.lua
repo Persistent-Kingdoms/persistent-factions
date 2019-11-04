@@ -42,7 +42,7 @@ minetest.register_on_dieplayer(function(obj, reason)
         local news_msg = ""
         local reason_msg = ""
         local player = obj:get_player_name()
-        local node = minetest.registered_nodes[reason.node] or nil
+        local node = minetest.registered_nodes[reason.node]
         local num = nil
 
         if reason.type == "node_damage" and node then
@@ -71,7 +71,7 @@ minetest.register_on_dieplayer(function(obj, reason)
             end
 
             news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. " \"" .. killer .. "\"."
-        else
+        elseif reason_msg ~= "" then
             news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. "."
         end
 
