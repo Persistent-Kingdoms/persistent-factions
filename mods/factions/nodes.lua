@@ -32,7 +32,9 @@ minetest.register_node("factions:chest", {
     description = "Faction chest",
     paramtype2 = "facedir",
     on_construct = function(pos)
-        minetest.get_meta(pos):get_inventory():set_size("main", 8*4)
+        local meta = minetest.get_meta(pos)
+        meta:get_inventory():set_size("main", 8*4)
+        meta:mark_as_private("main")
     end,
     allow_metadata_inventory_move = function(pos, from_list, from_index, to_list, to_index, count, player)
         if factions.can_use_chest(pos, player:get_player_name()) then
@@ -60,6 +62,10 @@ minetest.register_node("factions:chest", {
             minetest.show_formspec(clicker:get_player_name(), "factions:chest", factions.get_chest_formspec(pos))
         end
         return itemstack
+    end
+    on_punch = function(pos)
+        local meta = minetest.get_meta(pos)
+        meta:mark_as_private("main")
     end
 })
 

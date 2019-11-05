@@ -623,3 +623,10 @@ function default.can_interact_with_node(player, pos)
 
 	return false
 end
+
+-- kept for compat
+
+default.gui_bg = ""
+default.gui_bg_img = ""
+default.gui_slots = ""
+

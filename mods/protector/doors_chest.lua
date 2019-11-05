@@ -513,6 +513,7 @@ minetest.register_node("protector:chest", {
 		meta:set_string("infotext", "Protected Chest")
 		meta:set_string("name", "")
 		inv:set_size("main", 8 * 4)
+		meta:mark_as_private("inv")
 	end,
 
 	can_dig = function(pos,player)
@@ -573,6 +574,11 @@ minetest.register_node("protector:chest", {
 				clicker:get_player_name(),
 				"protector:chest_" .. minetest.pos_to_string(pos),
 				formspec)
+	end,
+
+	on_punch = function(pos)
+		local meta = minetest.get_meta(pos)
+		meta:mark_as_private("inv")
 	end,
 
 	on_blast = function() end,

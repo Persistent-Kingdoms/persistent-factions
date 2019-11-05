@@ -3,6 +3,6 @@ minetest.register_on_joinplayer(function(player)
 	local f = io.open(filename..".png")
 	if f then
 		f:close()
-		default.player_set_textures(player, {"player_"..player:get_player_name()..".png"})
+		player_api.set_textures(player, {"player_"..player:get_player_name()..".png"})
 	end
 end)
