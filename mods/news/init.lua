@@ -27,12 +27,12 @@ news.chat_reasons.drown = {
 minetest.register_privilege("news_report", {give_to_admin = true})
 
 function news.register_deathmsg_tbl(type, msgs, ...)
-    if not type or not msgs or not arg then
+    if not type or not msgs or not ... then
         return
     end
 
     if news.chat_reasons[type] then
-        for _, tbl in pairs(arg) do
+        for _, tbl in ipairs({...}) do
             news.chat_reasons[type][tbl] = msgs
         end
     end
