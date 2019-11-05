@@ -2,9 +2,6 @@
 local S = armor_i18n.gettext
 
 local armor_stand_formspec = "size[8,7]" ..
-	default.gui_bg ..
-	default.gui_bg_img ..
-	default.gui_slots ..
 	default.get_hotbar_bg(0,3) ..
 	"list[current_name;armor_head;3,0.5;1,1;]" ..
 	"list[current_name;armor_torso;4,0.5;1,1;]" ..

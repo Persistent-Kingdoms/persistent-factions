@@ -11,9 +11,6 @@ end
 
 local bones_formspec =
 	"size[8,11]" ..
-	default.gui_bg ..
-	default.gui_bg_img ..
-	default.gui_slots ..
 	"list[current_name;main;0,0.3;8,6;]" ..
 	"list[current_player;main;0,6.85;8,1;]" ..
 	"list[current_player;main;0,8.08;8,3;8]" ..

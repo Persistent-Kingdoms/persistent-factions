@@ -5,7 +5,7 @@
 	return inv:is_empty("main")
 end --]]
 
-xbg = default.gui_bg..default.gui_bg_img..default.gui_slots
+xbg = ""
 local default_inventory_size = 32
 
 local default_inventory_formspecs = {

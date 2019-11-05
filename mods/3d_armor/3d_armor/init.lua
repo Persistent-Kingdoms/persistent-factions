@@ -206,7 +206,7 @@ end
 
 -- Armor Player Model
 
-default.player_register_model("3d_armor_character.b3d", {
+player_api.register_model("3d_armor_character.b3d", {
 	animation_speed = 30,
 	textures = {
 		armor.default_skin..".png",
@@ -240,7 +240,7 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 end)
 
 minetest.register_on_joinplayer(function(player)
-	default.player_set_model(player, "3d_armor_character.b3d")
+	player_api.set_model(player, "3d_armor_character.b3d")
 	minetest.after(0, function(player)
 		if init_player_armor(player) == false then
 			pending_players[player] = 0
