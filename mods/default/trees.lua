@@ -487,17 +487,6 @@ function default.sapling_on_place(itemstack, placer, pointed_thing,
 		minetest.record_protection_violation(pos, player_name)
 		return itemstack
 	end
-	-- Check tree volume for protection
-	if default.intersects_protection(
-			vector.add(pos, minp_relative),
-			vector.add(pos, maxp_relative),
-			player_name,
-			interval) then
-		minetest.record_protection_violation(pos, player_name)
-		-- Print extra information to explain
-		minetest.chat_send_player(player_name, "Tree will intersect protection")
-		return itemstack
-	end
 
 	minetest.log("action", player_name .. " places node "
 			.. sapling_name .. " at " .. minetest.pos_to_string(pos))
