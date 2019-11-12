@@ -26,13 +26,15 @@ news.chat_reasons.drown = {
 
 minetest.register_privilege("news_report", {give_to_admin = true})
 
-function news.register_deathmsg_tbl(type, name, msgs)
-    if not (type or name or msgs) then
+function news.register_deathmsg_tbl(type, msgs, ...)
+    if not type or not msgs or not ... then
         return
     end
 
     if news.chat_reasons[type] then
-        news.chat_reasons[type][name] = msgs
+        for _, tbl in ipairs({...}) do
+            news.chat_reasons[type][tbl] = msgs
+        end
     end
 end
 
@@ -42,7 +44,7 @@ minetest.register_on_dieplayer(function(obj, reason)
         local news_msg = ""
         local reason_msg = ""
         local player = obj:get_player_name()
-        local node = minetest.registered_nodes[reason.node] or nil
+        local node = minetest.registered_nodes[reason.node]
         local num = nil
 
         if reason.type == "node_damage" and node then
@@ -71,16 +73,18 @@ minetest.register_on_dieplayer(function(obj, reason)
             end
 
             news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. " \"" .. killer .. "\"."
-        else
+        elseif reason_msg ~= "" then
             news_msg = " BREAKING NEWS: Local player \"" .. player .. "\" " .. reason_msg .. "."
         end
 
-        local station = "[BBC News]"
-        station = minetest.colorize("#a8659c", station)
+        if reason_msg ~= "" then
+            local station = "[BBC News]"
+            station = minetest.colorize("#a8659c", station)
 
-        news_msg = minetest.colorize("#7f99b1", news_msg)
+            news_msg = minetest.colorize("#7f99b1", news_msg)
 
-        minetest.chat_send_all(station .. news_msg)
+            minetest.chat_send_all(station .. news_msg)
+        end
     end
 end)
 
@@ -116,9 +120,9 @@ minetest.register_chatcommand("news", {
     end
 })
 
-news.register_deathmsg_tbl("nodes", "default:lava_source", 
-{
+local lava_death_msgs = {
     "melted into a ball of fire",
     "couldn't resist the warm glow of lava",
-    "dug straight down"
-})
+    "dug straight down",
+}
+news.register_deathmsg_tbl("nodes", lava_death_msgs, "default:lava_source", "default:lava_flowing")
